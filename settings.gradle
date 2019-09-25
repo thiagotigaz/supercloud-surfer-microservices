@@ -1,0 +1,1 @@
+include 'config-server', 'eureka-server', 'zuul-server', 'users-service', 'boards-service', 'quivers-service'

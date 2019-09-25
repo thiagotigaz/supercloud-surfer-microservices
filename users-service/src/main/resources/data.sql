@@ -1,0 +1,17 @@
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (1, 'Thiago', 'Lima', '1989-10-31', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (2, 'Tyrone', 'Sloan', '1979-10-21', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (3, 'Jeremiah', 'Hardy', '1990-10-13', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (4, 'Chaya', 'Garrett', '1995-10-31', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (5, 'Talon', 'Coffey', '1954-11-29', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (6, 'Mckenzie', 'Sanchez', '1989-10-28', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (7, 'Chace', 'Schwartz', '1955-10-31', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (8, 'Ronnie', 'Maldonado', '1945-10-30', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (9, 'Brooklynn', 'Bartlett', '1968-10-14', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (10, 'Marisol', 'Hansen', '1999-10-15', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (11, 'Alice', 'Stout', '2000-10-17', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (12, 'Ryker', 'Pope', '1988-10-18', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (13, 'Rebecca', 'Lam', '1987-10-16', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (14, 'Abagail', 'Carr', '1986-10-15', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (15, 'Matthew', 'Rivas', '1984-10-10', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (16, 'Janelle', 'Chang', '1982-10-03', 'San Diego', 'CA', '92107');
+insert into user (id, first_name, last_name, dob, city, state, zipcode) values (17, 'Zoey', 'Dudley', '1981-10-01', 'San Diego', 'CA', '92107');
