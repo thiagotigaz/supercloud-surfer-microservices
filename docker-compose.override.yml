@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  config-server:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./config-server/build/libs/config-server.jar:/app.jar
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  eureka-server:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8761:8761"
+    volumes:
+      - ./eureka-server/build/libs/eureka-server.jar:/app.jar
+    depends_on:
+      - config-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  zuul-server:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./zuul-server/build/libs/zuul-server.jar:/app.jar
+    depends_on:
+      - eureka-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  users-service:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./users-service/build/libs/users-service.jar:/app.jar
+    depends_on:
+      - zuul-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  boards-service:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./boards-service/build/libs/boards-service.jar:/app.jar
+    depends_on:
+      - zuul-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  quivers-service:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./quivers-service/build/libs/quivers-service.jar:/app.jar
+    depends_on:
+      - zuul-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+
+

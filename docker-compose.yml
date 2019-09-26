@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  config-server:
+    build: ./config-server
+  eureka-server:
+    build: ./eureka-server
+  zuul-server:
+    build: ./zuul-server
+    ports:
+      - "8765:8765"
+  users-service:
+    build: ./users-service
+  boards-service:
+    build: ./boards-service
+  quivers-service:
+    build: ./quivers-service
