@@ -9,6 +9,10 @@ services:
     build: ./zuul-server
     ports:
       - "8765:8765"
+  zipkin-server:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
   users-service:
     build: ./users-service
   boards-service:
