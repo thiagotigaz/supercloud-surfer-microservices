@@ -10,9 +10,15 @@ buildscript {
     }
 }
 
+plugins {
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
 apply plugin: 'idea'
 
 allprojects {
+
     repositories {
         mavenLocal()
         mavenCentral()
@@ -26,6 +32,14 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
     sourceCompatibility = 1.8
+    targetCompatibility = 1.8
     group = 'br.com.supercloud.surfer'
+    version = '0.0.1-SNAPSHOT'
+    bootJar {
+        archiveName "app.jar"
+    }
 }
