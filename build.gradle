@@ -40,6 +40,6 @@ subprojects {
     group = 'br.com.supercloud.surfer'
     version = '0.0.1-SNAPSHOT'
     bootJar {
-        archiveName "app.jar"
+        archiveName = "${project.name}.jar"
     }
 }
