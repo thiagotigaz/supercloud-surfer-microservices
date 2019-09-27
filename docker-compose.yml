@@ -11,8 +11,29 @@ services:
       - "8765:8765"
   zipkin-server:
     image: openzipkin/zipkin
-    ports:
-      - "9411:9411"
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - ES_HOSTS=elasticsearch:9200
+      - KAFKA_BOOTSTRAP_SERVERS=kafka-zookeeper:9092
+    depends_on:
+      - kafka-zookeeper
+      - elasticsearch
+  zipkin-ui:
+    image: openzipkin/zipkin-ui
+    environment:
+      - ZIPKIN_BASE_URL=http://zipkin-server:9411
+    depends_on:
+      - zipkin-server
+  kafka-zookeeper:
+    image: openzipkin/zipkin-kafka
+  elasticsearch:
+    image: openzipkin/zipkin-elasticsearch7
+  dependencies:
+    image: openzipkin/zipkin-dependencies
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - ES_HOSTS=elasticsearch
+    entrypoint: crond -f
   users-service:
     build: ./users-service
   boards-service:

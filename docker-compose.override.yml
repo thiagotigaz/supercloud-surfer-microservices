@@ -26,6 +26,20 @@ services:
     depends_on:
       - eureka-server
     entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  zipkin-server:
+    ports:
+      - "9411:9411"
+  zipkin-ui:
+    ports:
+      - "80:80"
+  kafka-zookeeper:
+    ports:
+      - "2181:2181"
+      - "9092:9092"
+      - "19092:19092"
+  elasticsearch:
+    ports:
+      - "9200:9200"
   users-service:
     image: openjdk:8-jdk-alpine
     ports:

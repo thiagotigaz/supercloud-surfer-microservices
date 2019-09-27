@@ -5,6 +5,7 @@ import br.com.supercloud.surfer.users.proxy.QuiverServiceProxy;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = {"/users", "/surfers"})
 @RequiredArgsConstructor
+@Slf4j
 public class UserController {
 
     private final UserRepository userRepository;
@@ -50,8 +52,11 @@ public class UserController {
     @GetMapping("/{id}/quivers")
     ResponseEntity<List<QuiverBean>> findUserQuivers(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
-        return user.isPresent()
-                ? ResponseEntity.ok(quiverServiceProxy.retrieveQuivers(id))
-                : ResponseEntity.badRequest().build();
+        if (user.isPresent()) {
+            List<QuiverBean> quiverBeans = quiverServiceProxy.retrieveQuivers(id);
+            log.info("Retrieved quivers: {}", quiverBeans);
+            return ResponseEntity.ok(quiverBeans);
+        }
+        return ResponseEntity.badRequest().build();
     }
 }
