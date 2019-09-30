@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 // The FeignClient annotation already uses @RibbonClient for client side load balancing
-@FeignClient(name = "zuul-server")
+@FeignClient(name = "zuul-server", fallback = QuiverServiceProxyFallback.class)
 public interface QuiverServiceProxy {
 
     @GetMapping("/quivers-service/quivers/user/{userId}")
