@@ -9,6 +9,8 @@ services:
     build: ./zuul-server
     ports:
       - "8765:8765"
+  uaa-server:
+    build: ./uaa-server
   zipkin-server:
     image: openzipkin/zipkin
     environment:

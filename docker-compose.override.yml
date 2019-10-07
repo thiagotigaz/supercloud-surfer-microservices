@@ -26,6 +26,15 @@ services:
     depends_on:
       - eureka-server
     entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
+  uaa-server:
+    image: openjdk:8-jdk-alpine
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./uaa-server/build/libs/uaa-server.jar:/app.jar
+    depends_on:
+      - zuul-server
+    entrypoint: ["java","-Dspring.profiles.active=docker","-jar","/app.jar"]
   zipkin-server:
     ports:
       - "9411:9411"
