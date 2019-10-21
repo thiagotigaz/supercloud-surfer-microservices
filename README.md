@@ -31,3 +31,4 @@ The purpose of this project is to demonstrate the usage of spring cloud stack an
 * [Microservices Patterns: With examples in Java](https://www.amazon.com/Microservices-Patterns-examples-Chris-Richardson/dp/1617294543/ref=pd_sbs_14_2/134-9274178-7206201?_encoding=UTF8&pd_rd_i=1617294543&pd_rd_r=f450dbe1-cece-4246-8644-e90881dc5a52&pd_rd_w=jPBpk&pd_rd_wg=7rA58&pf_rd_p=d66372fe-68a6-48a3-90ec-41d7f64212be&pf_rd_r=7DMW89E5PE8QXPX5GTB5&psc=1&refRID=7DMW89E5PE8QXPX5GTB5)
 * [A pattern language for microservices](https://microservices.io/patterns/index.html)
 * [Centralized Authorization with OAuth2 + JWT using Spring Boot 2](https://blog.marcosbarbero.com/centralized-authorization-jwt-spring-boot2/)
+* [Microservices with Spring Boot and Spring Cloud. From config server to OAuth2 server (without inMemory things)](https://github.com/marcusdacoregio/oauth2-spring-boot)
